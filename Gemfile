@@ -15,6 +15,7 @@ gem "pry-rails"
 
 group :development, :test do
   gem "pry-byebug"
+  gem "rspec-rails", ">= 3.5.0.beta3"
 end
 
 group :development do
