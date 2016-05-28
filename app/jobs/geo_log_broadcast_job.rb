@@ -1,4 +1,4 @@
-class GeoLogBroadcastJob < ActiveJob::Base
+class GeoLogBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(line)

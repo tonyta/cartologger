@@ -8,6 +8,7 @@ gem "redis", "~> 3.0"
 gem "http"
 
 gem "puma", "~> 3.0"
+gem "sidekiq"
 
 gem "uglifier", ">= 1.3.0"
 gem "jquery-rails"

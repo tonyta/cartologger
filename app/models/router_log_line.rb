@@ -8,7 +8,7 @@ class RouterLogLine
 
   def status_ok?
     return @status_ok if defined? @status_ok
-    @status_ok = @raw_line =~ OK_RE
+    @status_ok = !!(@raw_line =~ OK_RE)
   end
 
   def ip_address

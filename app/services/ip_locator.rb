@@ -2,7 +2,7 @@ require "redis"
 require "http"
 
 class IPLocator
-  RedisClient = Redis.new(db: 0)
+  RedisClient = Redis.new(db: 2)
 
   ResponseAttrs = %i{
     ip time_zone latitude longitude city metro_code zip_code

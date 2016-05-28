@@ -1,8 +1,10 @@
 class LogplexController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: :create
+
   ROUTER_RE = /heroku router/
 
   def create
-    router_logs = request.body.each_line do |line|
+    request.body&.each_line do |line|
       GeoLogBroadcastJob.perform_later(line.chomp) if line =~ ROUTER_RE
     end
 

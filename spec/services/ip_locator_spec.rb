@@ -18,7 +18,7 @@ describe IPLocator do
 
   describe "fetching and caching" do
     it "fetches only once and caches for every other request" do
-      Redis.new(db: 0).del("8.8.8.8")
+      Redis.new(db: 2).del("8.8.8.8")
 
       instance = described_class.new("8.8.8.8")
       expect(instance.geo_json).to include '"ip":"8.8.8.8"'
