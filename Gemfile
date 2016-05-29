@@ -2,9 +2,17 @@ source "https://rubygems.org"
 
 gem "dotenv-rails", groups: [:development, :test]
 
-gem "rails", ">= 5.0.0.rc1", "< 5.1"
+# gem "rails", ">= 5.0.0.rc1"
+# Pick and choose Rails dependencies
+gem "actioncable", ">= 5.0.0.rc1"
+gem "actionpack", ">= 5.0.0.rc1"
+gem "actionview", ">= 5.0.0.rc1"
+gem "activejob", ">= 5.0.0.rc1"
+gem "activemodel", ">= 5.0.0.rc1"
+gem "activesupport", "= 5.0.0.rc1"
+gem "railties", "= 5.0.0.rc1"
+gem "sprockets-rails", ">= 2.0.0"
 
-gem "pg", "~> 0.18"
 gem "redis", "~> 3.0"
 gem "http"
 
