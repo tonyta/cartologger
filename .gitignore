@@ -13,5 +13,9 @@
 !/log/.keep
 !/tmp/.keep
 
+
+# Ignore super-secret environment variables
+.env
+
 # Ignore Byebug command history file.
 .byebug_history
