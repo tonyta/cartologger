@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
-gem "dotenv-rails", groups: [:development, :test]
+ruby "2.3.0"
+gem 'rails_12factor', group: :production
 
 # gem "rails", ">= 5.0.0.rc1"
 # Pick and choose Rails dependencies
@@ -25,6 +26,7 @@ gem "jquery-rails"
 gem "pry-rails"
 
 group :development, :test do
+  gem "dotenv-rails"
   gem "pry-byebug"
   gem "rspec-rails", ">= 3.5.0.beta3"
 end
