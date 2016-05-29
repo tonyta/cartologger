@@ -8,7 +8,7 @@ require "sprockets/railtie"
 
 Bundler.require(*Rails.groups)
 
-module Geoscripted
+module GeoLogger
   class Application < Rails::Application
   end
 end
