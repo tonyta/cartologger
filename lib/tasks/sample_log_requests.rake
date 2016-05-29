@@ -8,9 +8,11 @@ task mock_log_drain: :environment do
   }
   uri = "http://localhost:3000/logplex"
 
-  File.read(sample_log_filename).split(delimiter).each do |body|
-    sleep 0.5
+  log_bodies = File.read(sample_log_filename).split(delimiter)
+
+  log_bodies.each.with_index(1) do |body, i|
+    sleep 0.1
     res = HTTP[headers].post(uri, body: body)
-    puts res.status
+    puts "request #{i.to_s.rjust(3, '0')}, status: #{res.status}, runtime: #{res.headers[:x_runtime]}"
   end
 end

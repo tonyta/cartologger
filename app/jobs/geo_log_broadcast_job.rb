@@ -2,7 +2,8 @@ class GeoLogBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(line)
-    ip = RouterLogLine.new(line).ip_address
-    location = IPLocator.new(ip)
+    log_line = RouterLogLine.new(line)
+    return unless log_line.status_success?
+    location = IPLocator.new(log_line.ip_address)
   end
 end
