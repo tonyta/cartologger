@@ -1,2 +1,9 @@
 body { margin:0; padding:0; }
 #map { position:absolute; top:0; bottom:0; width:100%; }
+.marker-icon {
+  border-radius: 100%;
+  text-align: center;
+  color: white;
+  background: #41B324;
+  opacity: 0.9;
+}
