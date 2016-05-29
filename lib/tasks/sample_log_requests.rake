@@ -6,7 +6,7 @@ task mock_log_drain: :environment do
   headers = {
     "Content-Type"=>"application/logplex-1"
   }
-  uri = "http://localhost:3000/logplex"
+  uri = "http://geo.tonyta.com/logplex"
 
   log_bodies = File.read(sample_log_filename).split(delimiter)
 

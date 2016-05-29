@@ -103,7 +103,7 @@ bind 'tcp://0.0.0.0:3000'
 #
 # The default is "0".
 #
-# workers ENV.fetch("WEB_CONCURRENCY") { 0 }
+workers ENV.fetch("WEB_CONCURRENCY") { 0 }
 
 # Code to run immediately before the master starts workers.
 #
