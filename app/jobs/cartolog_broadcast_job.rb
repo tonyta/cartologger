@@ -1,4 +1,4 @@
-class GeoLogBroadcastJob < ApplicationJob
+class CartologBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(line)
@@ -7,7 +7,7 @@ class GeoLogBroadcastJob < ApplicationJob
     location = IPLocator.new(log_line.ip_address)
 
     ActionCable.server.broadcast(
-      "geo_log_channel",
+      "cartolog_channel",
       lat: location.latitude,
       lng: location.longitude
     )

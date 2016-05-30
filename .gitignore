@@ -12,7 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
+*.rdb
 
 # Ignore super-secret environment variables
 .env

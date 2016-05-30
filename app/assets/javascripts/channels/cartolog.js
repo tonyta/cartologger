@@ -1,6 +1,6 @@
-App.init.GeoLog = function() {
+App.init.Cartolog = function() {
 
-  App.GeoLog = App.cable.subscriptions.create("GeoLogChannel", {
+  App.Cartolog = App.cable.subscriptions.create("CartologChannel", {
     connected: function() {
       // Called when the subscription is ready for use on the server
     },
@@ -11,7 +11,7 @@ App.init.GeoLog = function() {
 
     received: function(data) {
       // Called when there's incoming data on the websocket for this channel
-      App.addGeoLogPoint(data.lat, data.lng);
+      App.addClusterPoint(data.lat, data.lng);
     },
 
   });

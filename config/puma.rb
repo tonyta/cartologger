@@ -29,10 +29,9 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # The default is "false".
 #
 # daemonize
-daemonize true
+daemonize ENV["RAILS_ENV"] == "production"
 
-puma_root = "/home/tonyta/puma"
-# puma_root = "/Users/tonyta/geo-logger"
+puma_root = File.expand_path("../../tmp", __FILE__)
 
 # Store the pid of the server in the file at "path".
 #
@@ -48,7 +47,6 @@ state_path "#{ puma_root }/puma.state"
 # "false".
 #
 stdout_redirect "#{ puma_root }/stdout", "#{ puma_root }/stderr"
-# stdout_redirect '/u/apps/lolcat/log/stdout', '/u/apps/lolcat/log/stderr', true
 
 # Disable request logging.
 #

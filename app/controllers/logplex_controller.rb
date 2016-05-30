@@ -5,7 +5,7 @@ class LogplexController < ApplicationController
 
   def create
     request.body&.each_line do |line|
-      GeoLogBroadcastJob.perform_later(line.chomp) if line =~ ROUTER_RE
+      CartologBroadcastJob.perform_later(line.chomp) if line =~ ROUTER_RE
     end
 
     head :created

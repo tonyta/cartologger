@@ -8,7 +8,7 @@ require "sprockets/railtie"
 
 Bundler.require(*Rails.groups)
 
-module GeoLogger
+module Cartologger
   class Application < Rails::Application
   end
 end

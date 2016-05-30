@@ -34,9 +34,11 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
+  domain_name = ENV.fetch("DOMAIN_NAME")
+
   # Action Cable endpoint configuration
-  config.action_cable.url = "wss://#{ ENV["DOMAIN_NAME"] }/cable"
-  config.action_cable.allowed_request_origins = [ "http://#{ ENV["DOMAIN_NAME"] }", /http:\/\/#{ ENV["DOMAIN_NAME"] }/ ]
+  config.action_cable.url = "wss://#{ domain_name }/cable"
+  config.action_cable.allowed_request_origins = [ "http://#{ domain_name }", /http:\/\/#{ domain_name }/ ]
 
   # Don't mount Action Cable in the main server process.
   # config.action_cable.mount_path = nil

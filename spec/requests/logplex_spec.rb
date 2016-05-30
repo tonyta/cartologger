@@ -27,9 +27,9 @@ describe LogplexController, type: :request do
           headers: { "Content-Type" => "application/logplex-1" }
 
         expect(ActiveJob::Base.queue_adapter.enqueued_jobs).to eq [
-          { job: GeoLogBroadcastJob, queue: "default",
+          { job: CartologBroadcastJob, queue: "default",
             args: [%{284 <158>1 2016-05-28T06:50:53.369991+00:00 host heroku router - at=info method=GET path="/fighter/v1/conversations/available" host=app.scrabble-babble.com request_id=5bfcf090-b554-4319-99a7-1ec1a9a3edb1 fwd="188.14.225.207,54.161.112.48" dyno=web.1 connect=0ms service=20ms status=304 bytes=758}] },
-          { job: GeoLogBroadcastJob, queue: "default",
+          { job: CartologBroadcastJob, queue: "default",
             args: [%{276 <158>1 2016-05-28T06:50:53.383848+00:00 host heroku router - at=info method=GET path="/fighter/v1/fighting_samples" host=app.scrabble-babble.com request_id=5bfcf090-b554-4319-99a7-1ec1a9a3edb1 fwd="188.14.225.207,54.161.112.48" dyno=web.1 connect=1ms service=29ms status=304 bytes=758}] },
         ]
 

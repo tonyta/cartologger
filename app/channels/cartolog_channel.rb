@@ -1,6 +1,6 @@
-class GeoLogChannel < ApplicationCable::Channel
+class CartologChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "geo_log_channel"
+    stream_from "cartolog_channel"
   end
 
   def unsubscribed
