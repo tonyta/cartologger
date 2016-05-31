@@ -81,4 +81,8 @@ heroku drains:add https://where-you-deployed-cartologger.com/logplex --app your-
 - Statistics and history per visitor (IP address).
 - Sorting and selection based on host, path, and method.
 - Only display most recent 50,000 (or so).
+- Reset button to clear map.
+- Automatically scroll map to latest activity.
+- Color and size tweaks for clusters.
+- Presentation mode.
 
