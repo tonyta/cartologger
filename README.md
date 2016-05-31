@@ -85,4 +85,6 @@ heroku drains:add https://where-you-deployed-cartologger.com/logplex --app your-
 - Automatically scroll map to latest activity.
 - Color and size tweaks for clusters.
 - Presentation mode.
+- Configure log parsing via YAML.
+- Mountable in existing Rails app.
 
