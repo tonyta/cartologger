@@ -1,5 +1,5 @@
 # Cartologger
-**Mapping Live Requests from Heroku Log Drains via WebSockets**
+[**Mapping Live, Realtime Requests from Heroku Log Drains via WebSockets**](http://cartologger.tonyta.com)
 
 ![Cartologger Map](https://github.com/tonyta/cartologger/blob/master/cartologger-map.jpg)
 
@@ -80,3 +80,5 @@ heroku drains:add https://where-you-deployed-cartologger.com/logplex --app your-
 - Tooltip on each marker displaying the city and country of the request.
 - Statistics and history per visitor (IP address).
 - Sorting and selection based on host, path, and method.
+- Only display most recent 50,000 (or so).
+
