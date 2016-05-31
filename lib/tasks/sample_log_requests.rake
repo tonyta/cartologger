@@ -6,7 +6,7 @@ task mock_log_drain: :environment do
   headers = {
     "Content-Type"=>"application/logplex-1"
   }
-  uri = "http://#{ ENV["DOMAIN_NAME"] }/logplex"
+  uri = "http://#{ ENV.fetch("DOMAIN_NAME") { "localhost:3000" } }/logplex"
 
   log_bodies = File.read(sample_log_filename).split(delimiter)
 
