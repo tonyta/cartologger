@@ -46,7 +46,7 @@ state_path "#{ puma_root }/puma.state"
 # ("append") specifies whether the output is appended, the default is
 # "false".
 #
-stdout_redirect "#{ puma_root }/stdout", "#{ puma_root }/stderr"
+stdout_redirect "#{ puma_root }/puma.stdout", "#{ puma_root }/puma.stderr"
 
 # Disable request logging.
 #
