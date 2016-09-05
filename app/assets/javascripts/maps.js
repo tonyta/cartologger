@@ -15,7 +15,10 @@ App.init.Map = function(pk) {
     maxClusterRadius: 40,
   });
 
-  var popup = L.popup({ closeButton: false })
+  var popup = App.popup = L.popup({
+    closeButton: false,
+    className: 'marker-popup',
+  });
 
   clusterGroup
     .on('mouseover', function(a) {

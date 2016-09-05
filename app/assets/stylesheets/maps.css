@@ -13,6 +13,18 @@ body { margin:0; padding:0; }
   background: #41B324;
   opacity: 0.9;
 }
+.marker-popup .leaflet-popup-tip {
+  border-top-color: rgba(17,17,17,0.8);
+}
+.marker-popup .leaflet-popup-content-wrapper {
+  background: rgba(17,17,17,0.8);
+}
+.marker-popup .leaflet-popup-content {
+  padding: 5px;
+  font-weight: bold;
+  text-align: center;
+  color: #f8f8f8;
+}
 #github-button {
   position: absolute;
   top: 10px; right: 10px;
@@ -34,5 +46,5 @@ body { margin:0; padding:0; }
   #github-button:active {
     border: 1px solid rgba(0,0,0,1);
     background: #3887BE;
-    color: #FFF;
+    color: #f8f8f8;
   }
