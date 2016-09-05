@@ -62,7 +62,7 @@ Navigate your browser to `http://localhost:3000` and you should see a blank map.
 
 Run the following rake task:
 ``` bash
-bin/rake mock_log_drain
+bin/rake mock:logdrain
 ```
 
 This task will post into your server at `/logplex` with a fake log drain.
