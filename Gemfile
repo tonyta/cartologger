@@ -3,16 +3,16 @@ source "https://rubygems.org"
 ruby "2.3.0"
 gem 'rails_12factor', group: :production
 
-# gem "rails", ">= 5.0.0.rc1"
+# gem "rails", "~> 5.0.0"
 # Pick and choose Rails dependencies
-gem "actioncable", ">= 5.0.0.rc1"
-gem "actionpack", ">= 5.0.0.rc1"
-gem "actionview", ">= 5.0.0.rc1"
-gem "activejob", ">= 5.0.0.rc1"
-gem "activemodel", ">= 5.0.0.rc1"
-gem "activesupport", "= 5.0.0.rc1"
-gem "railties", "= 5.0.0.rc1"
-gem "sprockets-rails", ">= 2.0.0"
+gem "actioncable", "~> 5.0.0"
+gem "actionpack", "~> 5.0.0"
+gem "actionview", "~> 5.0.0"
+gem "activejob", "~> 5.0.0"
+gem "activemodel", "~> 5.0.0"
+gem "activesupport", "~> 5.0.0"
+gem "railties", "~> 5.0.0"
+gem "sprockets-rails", ">= 3.2.0"
 
 gem "redis", "~> 3.0"
 gem "http"
@@ -28,7 +28,7 @@ gem "pry-rails"
 group :development, :test do
   gem "dotenv-rails"
   gem "pry-byebug"
-  gem "rspec-rails", ">= 3.5.0.beta3"
+  gem "rspec-rails", "~> 3.5.0"
 end
 
 group :development do
