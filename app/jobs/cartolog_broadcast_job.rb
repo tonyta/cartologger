@@ -9,7 +9,8 @@ class CartologBroadcastJob < ApplicationJob
     ActionCable.server.broadcast(
       "cartolog_channel",
       lat: location.latitude,
-      lng: location.longitude
+      lng: location.longitude,
+      names: location.names
     )
   end
 end

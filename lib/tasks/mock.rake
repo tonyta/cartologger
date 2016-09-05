@@ -3,20 +3,19 @@ namespace :mock do
   desc "broadcast points"
   task :broadcast, [:num] => :environment do |t, num:|
 
-    def broadcast(lat, lng)
-      ActionCable.server.broadcast("cartolog_channel", lat: lat, lng: lng)
-    end
-
     def iterate(max_iterations)
       lng_enum = (-8..8).map { |i| i * 22.5  }
       lat_enum = (-4..4).map { |i| i * 22.5 }.reverse
-      current_count = 0
+      current_count = 1
 
       lat_enum.cycle do |lat|
         lng_enum.each do |lng|
           sleep 0.01
-          broadcast(lat, lng)
-          return if (current_count += 1) >= max_iterations
+          ActionCable.server.broadcast("cartolog_channel",
+            lat: lat, lng: lng,
+            names: ["#{current_count} of #{max_iterations}"]
+          )
+          return if (current_count += 1) > max_iterations
         end
       end
     end

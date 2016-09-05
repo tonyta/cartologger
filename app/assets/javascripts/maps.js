@@ -15,12 +15,34 @@ App.init.Map = function(pk) {
     maxClusterRadius: 40,
   });
 
+  var popup = L.popup({ closeButton: false })
+
+  clusterGroup
+    .on('mouseover', function(a) {
+      popup
+        .setLatLng(a.latlng)
+        .setContent(a.layer.options.title)
+      map.addLayer(popup);
+    })
+    .on('clustermouseover', function(a) {
+      allTitles = a.layer.getAllChildMarkers().map(function(m) { return m.options.title });
+      popup
+        .setLatLng(a.layer.getLatLng())
+        .setContent($.unique(allTitles).join("<br/>"))
+      map.addLayer(popup);
+    })
+    .on('clustermouseout', function() { map.removeLayer(popup); })
+    .on('clusterclick',    function() { map.removeLayer(popup); })
+    .on('mouseout',        function() { map.removeLayer(popup); })
+    .on('click',           function() { map.removeLayer(popup); });
+
   var markerList = App.markerList = [];
 
   map.addLayer(clusterGroup);
 
   App.addClusterPoint = function(lat, lng, title) {
     var marker = L.marker(new L.LatLng(lat, lng), {
+      title: title,
       icon: L.divIcon({ iconSize: [24, 24], className: 'marker-icon' }),
     });
 

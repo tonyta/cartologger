@@ -11,7 +11,7 @@ App.init.Cartolog = function() {
 
     received: function(data) {
       // Called when there's incoming data on the websocket for this channel
-      App.addClusterPoint(data.lat, data.lng);
+      App.addClusterPoint(data.lat, data.lng, data.names.join(", "));
     },
 
   });
