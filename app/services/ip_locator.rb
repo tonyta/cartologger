@@ -19,6 +19,10 @@ class IPLocator
     define_method(attr) { geo_hash[attr] }
   end
 
+  def names
+    geo_hash.values_at(:city, :region_name, :country_name).select(&:present?)
+  end
+
   def geo_hash
     @geo_hash ||= JSON.parse(geo_json, symbolize_names: true)
   end

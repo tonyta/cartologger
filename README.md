@@ -62,7 +62,7 @@ Navigate your browser to `http://localhost:3000` and you should see a blank map.
 
 Run the following rake task:
 ``` bash
-bin/rake mock_log_drain
+bin/rake mock:logdrain
 ```
 
 This task will post into your server at `/logplex` with a fake log drain.
@@ -80,11 +80,9 @@ heroku drains:add https://where-you-deployed-cartologger.com/logplex --app your-
 - Tooltip on each marker displaying the city and country of the request.
 - Statistics and history per visitor (IP address).
 - Sorting and selection based on host, path, and method.
-- Only display most recent 50,000 (or so).
 - Reset button to clear map.
 - Automatically scroll map to latest activity.
 - Color and size tweaks for clusters.
 - Presentation mode.
 - Configure log parsing via YAML.
 - Mountable in existing Rails app.
-
