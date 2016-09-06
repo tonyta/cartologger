@@ -1,11 +1,5 @@
 #!/usr/bin/env puma
 
-begin
-  require 'dotenv'
-  Dotenv.load
-rescue
-end
-
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart
 

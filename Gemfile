@@ -26,6 +26,7 @@ gem "jquery-rails"
 gem "pry-rails"
 
 group :development, :test do
+  gem "foreman"
   gem "dotenv-rails"
   gem "pry-byebug"
   gem "rspec-rails", "~> 3.5.0"
