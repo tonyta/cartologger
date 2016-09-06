@@ -25,8 +25,9 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 #
 # The default is "false".
 #
-# daemonize
-daemonize ENV["RAILS_ENV"] == "production"
+# Heroku does not like daemonize
+# TODO: look into this
+# daemonize ENV["RAILS_ENV"] == "production"
 
 puma_root = File.expand_path("../../tmp", __FILE__)
 
