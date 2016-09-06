@@ -1,6 +1,20 @@
 
 namespace :mock do
-  desc "broadcast points"
+  desc "broadcast all dump all redis keys"
+  task :dump_redis => :environment do
+    ips = IPLocator::RedisClient.keys
+    locations = ips.map { |ip| IPLocator.new(ip) }
+    locations.each do |location|
+      ActionCable.server.broadcast(
+        "cartolog_channel",
+        lat: location.latitude,
+        lng: location.longitude,
+        names: location.names
+      )
+    end
+  end
+
+  desc "broadcast mock points"
   task :broadcast, [:num] => :environment do |t, num:|
 
     def iterate(max_iterations)
